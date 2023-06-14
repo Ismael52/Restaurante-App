@@ -12,12 +12,12 @@ const menuStyles = StyleSheet.create({
     body: {
         alignItems: 'center',
         backgroundColor: 'rgba(250, 199, 107, 0.4)',
-        height: 500,
-        
+        height: 425,
+
     },
     imageContainer: {
-        
-        height: '50%',
+
+        height: '40%',
         width: '80%',
     },
     imageMenu: {
@@ -38,14 +38,13 @@ const menuStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        borderBottomWidth: 4,
-        borderBottomColor: 'orange',
+
     },
     /*IZQ MENU */
     leftContainer: {
         width: '60%',
         height: 37,
-        
+
         justifyContent: 'center',
         alignItems: 'flex-end',
     },
@@ -57,7 +56,7 @@ const menuStyles = StyleSheet.create({
     centerContainer: {
         width: '20%',
         height: 37,
-        
+
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -72,7 +71,7 @@ const menuStyles = StyleSheet.create({
     rightContainer: {
         width: '10%',
         height: 37,
-        
+
         justifyContent: 'center',
         alignItems: 'flex-end',
     },
@@ -83,7 +82,7 @@ const menuStyles = StyleSheet.create({
     rightContainer2: {
         width: '10%',
         height: 37,
-        
+
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -91,16 +90,72 @@ const menuStyles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20,
     },
-    enpoproContainer: {
+    /*aqui esta la fecha y las entradas */
+    enpopriContainer: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: 330,
+        borderTopWidth: 4,
+        borderTopColor: 'orange',
     },
     columnLeft: {
         justifyContent: 'center',
         alignItems: 'flex-start',
     },
-    columnRight:{
-        justifyContent: 'center',
-        alignItems: 'center',
+    columnRight: {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+
+    },
+    lblEntrada: {
+        fontWeight: 'bold',
+        fontSize: 14,
+    },
+    lblPostre: {
+        fontWeight: 'bold',
+        fontSize: 14,
+    },
+    lblPrincipal: {
+        fontWeight: 'bold',
+        fontSize: 14,
+    },
+    ingresoContainer: {
+        marginBottom: 0,
+        backgroundColor: 'orange',
+        paddingHorizontal: 10,
+        paddingVertical: 3,
+        flexDirection: 'row',
+
+    },
+    lblIngreso: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 14,
+    },
+    lblIngreso2: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 14,
+    },
+    lblFecha: {
+        fontWeight: 'bold',
+        fontSize: 14,
+    },
+    btnReservarcontainer:{
+        paddingRight:50,
+        paddingLeft:50,
+    },
+    btnReservar: {
+        backgroundColor: 'orange',
+        borderRadius: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        
+    },
+    buttonText: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 10,
     },
 });
 

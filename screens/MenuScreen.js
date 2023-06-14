@@ -65,53 +65,72 @@ const MenuScreen = ({ navigation }) => {
           </View>
         </View>
         {/*ENTRADA POSTRE PRINCIPAL */}
-        <View style={menuStyles.enpoproContainer}>
+        <View style={menuStyles.enpopriContainer}>
           <View style={menuStyles.columnLeft}>
-            <View style={menuStyles.lblEntrada}>
-              <Text >ENTRADA</Text>
+            <View >
+              <Text style={menuStyles.lblEntrada}>ENTRADA</Text>
             </View>
-            <View style={menuStyles.lblEntrada1}>
-              <Text >entrada 1</Text>
+            <View >
+              <Text style={menuStyles.lblEntrada1}>entrada 1</Text>
             </View>
-            <View style={menuStyles.lblEntrada2}>
-              <Text >entrada 2</Text>
+            <View >
+              <Text style={menuStyles.lblEntrada2}>entrada 2</Text>
             </View>
-            <View style={menuStyles.lblEntrada}>
-              <Text >POSTRE</Text>
+
+            <View >
+              <Text style={menuStyles.lblPostre}>POSTRE</Text>
             </View>
-            <View style={menuStyles.lblEntrada1}>
-              <Text >postre 1</Text>
+            <View >
+              <Text style={menuStyles.lblPostre1}>postre 1</Text>
             </View>
-            <View style={menuStyles.lblEntrada2}>
-              <Text >postre 2</Text>
+            <View >
+              <Text style={menuStyles.lblPostre2}>postre 2</Text>
             </View>
-            <View style={menuStyles.lblEntrada}>
-              <Text >PRINCIPAL</Text>
+
+            <View >
+              <Text style={menuStyles.lblPrincipal}>PRINCIPAL</Text>
             </View>
-            <View style={menuStyles.lblEntrada1}>
-              <Text >principal 1</Text>
+            <View >
+              <Text style={menuStyles.lblPrincipal1}>principal 1</Text>
             </View>
-            <View style={menuStyles.lblEntrada2}>
-              <Text >principal 2</Text>
+            <View >
+              <Text style={menuStyles.lblEntrada2}>principal 2</Text>
             </View>
           </View>
           <View style={menuStyles.columnRight}>
-            <View style={menuStyles.lblEntrada2}>
-              <Text >ingreso 12:00 a 12:30</Text>
+            <View style={menuStyles.ingresoContainer}>
+              <Text style={menuStyles.lblIngreso}>INGRESO: </Text>
+              <Text style={menuStyles.lblIngreso}>12:00 a 12:30</Text>
             </View>
+            <View style={menuStyles.item}>{/*para la fecha pueden dividirlo como la hora de ingreso en diferentes lblText */}
+              <Text style={menuStyles.lblFecha}>Martes 14 de Marzo</Text>
+            </View>
+            <View style={menuStyles.item}>
+              <Text style={menuStyles.lblFecha}>Martes 21 de Marzo</Text>
+            </View>
+            <View style={menuStyles.ingresoContainer}>
+              <Text style={menuStyles.lblIngreso2}>INGRESO: </Text>
+              <Text style={menuStyles.lblIngreso2}>19:00 a 19:30</Text>
+            </View>
+            <View style={menuStyles.item}>
+              <Text style={menuStyles.lblFecha}>Martes 15 de Marzo</Text>
+            </View>
+            <View style={menuStyles.item}>
+              <Text style={menuStyles.lblFecha}>Martes 15 de Marzo</Text>
+            </View>
+            <View style={menuStyles.btnReservarcontainer}>
+              <TouchableOpacity style={menuStyles.btnReservar} onPress={handleReservaButtonPress}>
+                <Text style={menuStyles.buttonText}>RESERVAR</Text>
+              </TouchableOpacity>
+            </View>
+
           </View>
         </View>
 
       </View>
 
-
-
-
-
-      {/*boton para pantalla reservar */}
-      <TouchableOpacity onPress={handleReservaButtonPress}>
-        <Text style={menuStyles.button}>Realizar una reserva</Text>
-      </TouchableOpacity>
+      {/*
+      
       <FlatList
         data={platos}
         renderItem={({ item }) => (
@@ -123,8 +142,9 @@ const MenuScreen = ({ navigation }) => {
         )}
         keyExtractor={(item) => item.id_plato.toString()}
       />
-      {/*quitar este boton*/}
+      
       <Button title="Agregar Plato" onPress={handleAgregarPlato} />
+      */}
     </ImageBackground>
   );
 };

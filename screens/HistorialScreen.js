@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import { ImageBackground } from 'react-native-web';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import historialStyles from '../styles/HistorialStyles';
 import headerStyles from '../styles/header';
@@ -24,7 +25,11 @@ const HistorialScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={headerStyles.container}>
+    <ImageBackground
+      style={headerStyles.container}
+      source={require("../assets/image2.jpg")}
+      imageStyle={{ opacity: 0.2 }}
+    >
       <View style={headerStyles.header}>
         {/* Logo de la restaurante */}
         <View style={headerStyles.logoContainer}>
@@ -48,43 +53,50 @@ const HistorialScreen = ({ navigation }) => {
             Vigente
           </Text>
         </View>
-        <View style={historialStyles.listaVigentes}>
-          <View style={historialStyles.cuadroVigente}>
-            <View style={historialStyles.viewImagen}>
-              <Text style={historialStyles.tituloHistorial}>
-                imagen
-              </Text>
+        {/*el view HistorialContainer se repite varias veces */}
+        <View style={historialStyles.historialContainer}>
+          <View style={historialStyles.column1}>
+            <Image source={require('../assets/menuIMG.jpg')} style={historialStyles.image} />
+          </View>
+          <View style={historialStyles.column2}>
+            <View style={historialStyles.view1}>
+              <Text style={historialStyles.lbltipoCocina}>Cocina Francesa </Text>
             </View>
-            <View style={historialStyles.viewDescripcion}>
-              <View>
-                <Text style={historialStyles.tituloHistorial}>
-                  Descripcion
-                </Text>
-              </View>
-              <View style={historialStyles.cuadroDescripcion}>
-                <View>
-                  <Text style={historialStyles.tituloHistorial}>
-                    fecha
-                  </Text>
-                </View>
-                <View>
-                  <Text style={historialStyles.tituloHistorial}>
-                    14 de diciembre
-                  </Text>
-                </View>
-              </View>
+            <View style={historialStyles.view2}>
+              <Text style={historialStyles.lblfecha}>Fecha: </Text>
+              <Text style={historialStyles.lblRespuesta}>fecha ejemplo </Text>
             </View>
-            <View style={historialStyles.viewBotones}>
-              <Text style={historialStyles.tituloHistorial}>
-                Botones
-              </Text>
+            <View style={historialStyles.view3}>
+              <Text style={historialStyles.lblAsientos}>Asientos: </Text>
+              <Text style={historialStyles.lblRespuesta}>6</Text>
+            </View>
+            <View style={historialStyles.view4}>
+              <Text style={historialStyles.lblHora}>Hora: </Text>
+              <Text style={historialStyles.lblRespuesta}>20:30</Text>
             </View>
           </View>
+          <View style={historialStyles.column3}>
+            {/* 
+            
+            <View style={historialStyles.view5}>
+              <Text style={historialStyles.text5}>Cerrado menu a Eleccion</Text>
+            </View>
+            */}
+            <TouchableOpacity style={historialStyles.touch1}>
+              <Text style={historialStyles.text6} onPress={handleReservaButtonPress}>EDITAR</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={historialStyles.touch2}>
+              <Text style={historialStyles.text7}>ELIMINAR</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={historialStyles.subTitulo}>
+          <Text style={historialStyles.tituloHistorial}>
+            Vencidos
+          </Text>
         </View>
       </View>
-      <TouchableOpacity onPress={handleReservaButtonPress}>
-        <Text style={historialStyles.button}>Realizar una reserva</Text>
-      </TouchableOpacity>
+
       {/*Footer */}
       <View style={footerStyles.footer}>
         <TouchableOpacity style={footerStyles.view} onPress={handleInicioPress}>
@@ -108,7 +120,7 @@ const HistorialScreen = ({ navigation }) => {
           <Text style={footerStyles.viewText}>Salir</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
